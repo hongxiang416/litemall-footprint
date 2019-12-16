@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: Footprint  #配置服务名
+  datasource:
+    url: jdbc:mysql://112.124.5.232:3306/oomall?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+#配置分页
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql
+
+#配置端口号
+server:
+  port: 8016
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://112.124.5.232:8011/eureka/
